@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css" type="text/css">
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js"></script>
+        <style>
+            html, body {
+                margin: 0;
+            }
+
+            #myMap {
+                height: 100vh;
+                width: 100vw;
+            }
+        </style>
+    </head>
+    <body onload="InitMap()">
+        <div id="myMap"></div>
+    </body>
+</html>
+<script type="text/javascript">
+    function InitMap() {
+        // Initialize the map
+        var map = new atlas.Map('myMap', {
+            center: [-122.33, 47.6], // Seattle, WA
+            zoom: 10,
+            language: 'en-US',
+            style: "night",
+            //style: "grayscale_dark",
+            //view: 'Auto',
+            authOptions: {
+                authType: 'subscriptionKey',
+                subscriptionKey: 'FSy8LfJN5ePrvrP5g3SzpBVIQ76CAYzyqwis3S8a28Jm2THxh4Z3JQQJ99BDAC8vTIn34ZynAAAgAZMP1dKf'
+            }
+        });
+    }
+</script>
