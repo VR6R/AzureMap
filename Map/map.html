@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css" type="text/css">
         <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <style>
             html, body {
                 margin: 0;
@@ -13,11 +14,17 @@
             }
         </style>
     </head>
-    <body onload="InitMap()">
+    <body>
         <div id="myMap"></div>
+        <div id="coords" style="position: absolute;left:0;right:0;top: 50px;width:700px;height:100px;text-align: center;margin-left:auto;margin-right:auto;"></div>
     </body>
 </html>
 <script type="text/javascript">
+    $(function(){
+        // Initialize the map when the document is ready
+        InitMap();
+    });
+
     function InitMap() {
         // Initialize the map
         var map = new atlas.Map('myMap', {
@@ -32,5 +39,19 @@
                 subscriptionKey: 'FSy8LfJN5ePrvrP5g3SzpBVIQ76CAYzyqwis3S8a28Jm2THxh4Z3JQQJ99BDAC8vTIn34ZynAAAgAZMP1dKf'
             }
         });
+
+        map.events.add('ready', function () {
+            map.events.add('mousemove', function(e) {
+                $('#coords').text(e.position);
+                
+                /*
+                var position = map.getCamera().position;
+                var lat = position[1].toFixed(4);
+                var lon = position[0].toFixed(4);
+                console.log('Latitude: ' + lat + ', Longitude: ' + lon);
+                */
+            });
+        });
+        
     }
 </script>
