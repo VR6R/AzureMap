@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.css" type="text/css">
+        <script src="https://atlas.microsoft.com/sdk/javascript/mapcontrol/3/atlas.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            html, body {
+                margin: 0;
+                font-family: Roboto;
+            }
+
+            #myMap {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            #coords {
+                font-family: Roboto;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50px;
+                width: fit-content;
+                height: 30px;
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #111;
+                vertical-align: middle;
+                line-height: 30px;
+                color: #888;
+                padding: 5px 15px;
+                border-radius: 10px;
+            }
+
+            #container {
+                display: grid;
+                grid-template-columns: 200px auto;
+            }
+
+            #container div {
+                height: 100vh;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="layers" style="background-color:red;">layer</div>
+            <div id="map" style="background-color: blue;">map</div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        // Initialize the map when the document is ready
+    });
+
+</script>
